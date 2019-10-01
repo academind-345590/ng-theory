@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent {
-  canAddCar = false;
-  constructor(){
-    setTimeout(()=>{
-      this.canAddCar = true;
-    },5000)
+  addCarStatus = '';
+  constructor(){ }
+  
+  addCar(){
+    this.addCarStatus = "Машина была добавлена";
   }
 }
