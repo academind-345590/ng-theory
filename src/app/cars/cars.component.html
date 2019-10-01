@@ -4,5 +4,5 @@
 <app-car></app-car>
 <app-car></app-car>
 <hr>
-<input type="text" class="form-control" (input)="onKeyUp($event)">
+<input type="text" class="form-control" #myInp (input)="onKeyUp(myInp.value)">
 <p>{{inputText}}</p>
