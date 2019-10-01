@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class CarsComponent {
   addCarStatus = '';
-  inputText = '';
+  inputText = 'Default text';
   constructor(){ }
   
   addCar(){
