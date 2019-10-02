@@ -11,7 +11,7 @@
 <ul>
   <li *ngFor="let date of dates; let i=index">
     <div>
-      <strong>{{i+1}}</strong> - <a href="#">{{ date | date:"medium" }}</a>
+      <strong>{{i+1}}</strong> - <a href="#">{{ date | uppercase }}</a>
     </div>
   </li>
 </ul>

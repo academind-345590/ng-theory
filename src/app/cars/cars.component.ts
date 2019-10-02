@@ -10,10 +10,10 @@ export class CarsComponent {
   cars = ['Jiguli','Niva','Moskvich','UAZ','Ford','BMW','Mazda'];
   addCarStatus = false;
   dates = [
-    new Date(2000,3,17),
-    new Date(2015,1,21),
-    new Date(2012,8,28),
-    new Date(1997,12,2),
+    new Date(2000,3,17).toDateString(),
+    new Date(2015,1,21).toDateString(),
+    new Date(2012,8,28).toDateString(),
+    new Date(1997,12,2).toDateString(),
   ]
   constructor(){ }
   
