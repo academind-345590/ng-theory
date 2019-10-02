@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class CarsComponent {
   carName = '';
-  carYaer = 2019;
+  carYear = 2019;
 
   cars: {name: string, year: number}[] = [{
     name: 'Ford',
@@ -25,10 +25,10 @@ export class CarsComponent {
   addCar(){
     this.cars.push({
       name: this.carName,
-      year: this.carYaer
+      year: this.carYear
     })
     this.carName = '';
-    this.carYaer = 2019;
+    this.carYear = 2019;
   }
   
   
