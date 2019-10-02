@@ -7,12 +7,7 @@ import { Component } from '@angular/core';
 })
 export class CarsComponent {
   carName = '';
-  cars = ['Jiguli','Niva','Moskvich','UAZ'];
-  items = [
-    {id:2348, name: 'item 1.U.13'},
-    {id:9879, name: 'item 8.W.84'},
-    {id:2846, name: 'item 6.PP.56'},
-  ];
+  cars = ['Jiguli','Niva','Moskvich','UAZ','Ford','BMW','Mazda'];
   addCarStatus = false;
   constructor(){ }
   
