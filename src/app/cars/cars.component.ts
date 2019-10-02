@@ -16,5 +16,8 @@ export class CarsComponent {
     this.cars.push(this.carName);
     this.carName = '';
   }
+  countLengthName(car: string){
+    return car.length <= 3 ? true : false;
+  }
   
 }
