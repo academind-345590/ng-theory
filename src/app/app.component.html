@@ -2,6 +2,17 @@
   <div class="col-md-8 col-md-offset-2">
 
         <h3 [appBackground]="'aqua'" [defaultColor]="'yellow'">{{ headerText }}</h3>
+
+        <ul class="list-group">
+          <li *ngFor="let item of items" (click)="onClick(item)" class="list-group-item">{{item}}</li>
+        </ul>
+
+        <div [ngSwitch]="current">
+          <p *ngSwitchCase="'banana'">banana</p>
+          <p *ngSwitchCase="'apple'" >apple</p>
+          <p *ngSwitchCase="'pear'"  >pear</p>
+          <p *ngSwitchDefault>default</p>
+        </div>
   
     </div>  
   </div>
