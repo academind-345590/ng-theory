@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-md-8 col-md-offset-2">
       
     </div>
   `
