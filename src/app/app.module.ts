@@ -4,15 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { PowPipe } from './pow.pipe';
-import { CarFilterPipe } from './car-filter.pipe';
+import { CarComponent } from './car/car.component';
+import { CarAddComponent } from './car-add/car-add.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PowPipe,
-    CarFilterPipe
+    CarComponent,
+    CarAddComponent,
   ],
   imports: [
     BrowserModule,
