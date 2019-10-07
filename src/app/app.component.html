@@ -31,7 +31,7 @@
       <label>Выберите страну</label>
       <select 
         class="form-control"
-        ngModel
+        [ngModel] = "defaultCantry"
         name="country"
         required
       >
@@ -45,7 +45,7 @@
         <input 
           type="radio" 
           [value]="ans.type"
-          ngModel
+          [ngModel] = "defaultAnswer"
           name="answer"
           required
         > 

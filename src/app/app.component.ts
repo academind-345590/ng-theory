@@ -16,6 +16,9 @@ export class AppComponent {
     text: 'Нет'
   }];
 
+  defaultAnswer = "no";
+  defaultCantry = "by"
+
   submitForm(form: NgForm){
     console.log('Submited!', form);
   }
