@@ -1,19 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { CarsService } from './cars.service';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  providers: [CarsService]
+  templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit{
-
-  cars = [];
-  
-  constructor(private carsService: CarsService){};
-  
-  ngOnInit() {
-    this.cars = this.carsService.cars;
-  }
-
+export class AppComponent {
+  answers = [{
+    type: 'yes',
+    text: 'Да'
+  }, {
+    type: 'no',
+    text: 'Нет'
+  }];
 }
