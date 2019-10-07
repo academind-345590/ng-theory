@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+
   answers = [{
     type: 'yes',
     text: 'Да'
@@ -13,4 +15,8 @@ export class AppComponent {
     type: 'no',
     text: 'Нет'
   }];
+
+  submitForm(form: NgForm){
+    console.log('Submited!', form);
+  }
 }
