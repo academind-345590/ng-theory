@@ -1,7 +1,6 @@
 <div class="col-lg-8 col-lg-offset-2">
-  <form (ngSubmit)="submitForm(form)" #form="ngForm">
-
-    <div class="form-group">
+  <form (ngSubmit)="submitForm(form)" #form="ngForm" >
+    <div class="form-group" >
       <label>Email</label>
       <input 
         type="text" 
@@ -9,8 +8,12 @@
         ngModel
         name="email"
         required
-        email        
+        email
+        #refEmail="ngModel"        
       >
+      <p *ngIf="refEmail.invalid &&  refEmail.touched">
+        Введите корректный email
+      </p>
     </div>
     <div class="form-group">
       <label>Пароль</label>
@@ -20,7 +23,9 @@
         ngModel
         name="pass"
         required
+        #refPass="ngModel"
       >
+      <p *ngIf="refPass.invalid && refPass.touched">Введите корректный пароль</p>
     </div>
     <div class="form-group">
       <label>Выберите страну</label>
