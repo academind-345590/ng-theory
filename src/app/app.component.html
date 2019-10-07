@@ -1,32 +1,35 @@
 <div class="col-lg-8 col-lg-offset-2">
   <form (ngSubmit)="submitForm(form)" #form="ngForm" >
-    <div class="form-group" >
-      <label>Email</label>
-      <input 
-        type="text" 
-        class="form-control" 
-        ngModel
-        name="email"
-        required
-        email
-        #refEmail="ngModel"        
-      >
-      <p *ngIf="refEmail.invalid &&  refEmail.touched">
-        Введите корректный email
-      </p>
+    <div ngModelGroup="user" #user="ngModelGroup">
+      <div class="form-group" >
+        <label>Email</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          ngModel
+          name="email"
+          required
+          email
+          #refEmail="ngModel"        
+        >
+        <p *ngIf="refEmail.invalid &&  refEmail.touched">
+          Введите корректный email
+        </p>
+      </div>
+      <div class="form-group">
+        <label>Пароль</label>
+        <input 
+          type="password" 
+          class="form-control" 
+          ngModel
+          name="pass"
+          required
+          #refPass="ngModel"
+        >
+        <p *ngIf="refPass.invalid && refPass.touched">Введите корректный пароль</p>
+      </div>
     </div>
-    <div class="form-group">
-      <label>Пароль</label>
-      <input 
-        type="password" 
-        class="form-control" 
-        ngModel
-        name="pass"
-        required
-        #refPass="ngModel"
-      >
-      <p *ngIf="refPass.invalid && refPass.touched">Введите корректный пароль</p>
-    </div>
+    <p *ngIf="user.invalid && user.touched">Введите корректные данные пользователя</p>
     <div class="form-group">
       <label>Выберите страну</label>
       <select 
