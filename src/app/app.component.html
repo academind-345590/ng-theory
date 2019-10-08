@@ -1,52 +1,10 @@
 <div class="col-lg-8 col-lg-offset-2">
-  <form  [formGroup]="form"  (ngSubmit)="onSubmit()">
-
-    <div formGroupName="user">
-      <div class="form-group">
-        <label>Email</label>
-        <input 
-          type="text" 
-          class="form-control" 
-          formControlName="email" 
-          [ngClass]="{'err': form.get('user.email').invalid && form.get('user.email').touched}"
-        >
-        <p *ngIf="form.get('user.email').invalid && form.get('user.email').touched">
-          <span *ngIf="form.get('user.email').errors['email']">Введите корректный Email</span>
-          <span *ngIf="form.get('user.email').errors['emailIsUsed']">Email уже существует</span>
-        </p>
-      </div>
-      <div class="form-group">
-        <label>Пароль</label>
-        <input type="password" class="form-control" formControlName="pass" [ngClass]="{'err': form.get('user.pass').invalid && form.get('user.pass').touched}">
-        <p *ngIf="form.get('user.pass').invalid && form.get('user.pass').touched">
-          <span *ngIf="form.get('user.pass').errors['required']">Пароль не должен быть пустым</span>
-          <span *ngIf="form.get('user.pass').errors['lengthError']">Пароль не должен иметь менее {{ charsCount }} символов</span>
-        </p>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Выберите страну</label>
-      <select class="form-control" formControlName="country">
-        <option value="ru">Россия</option>
-        <option value="by">Белоруссия</option>
-        <option value="ua">Украина</option>
-      </select>
-    </div>
-    <div class="radio" *ngFor="let ans of answers">
-      <label>
-        <input 
-          type="radio"
-          name="answer" 
-          [value]="ans.type"
-          formControlName="answer"
-        > {{ans.text}}
-      </label>
-    </div>
-    <button 
-      class="btn btn-success" 
-      type="submit"
-      [disabled]="form.invalid"
-    >Сохранить</button>
-
-  </form>
+  <button class="btn btn-primary">Загрузить машины</button>
+  <hr>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let car of cars">
+      <span class="badge">{{car.id}}</span> {{car.name}} ({{car.color}})
+    </li>
+  </ul>
 </div>
+  
