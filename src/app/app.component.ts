@@ -19,10 +19,16 @@ export class AppComponent {
   }];
 
   defaultAnswer = "no";
-  defaultCantry = "by"
+  defaultCantry = "by";
+
+  formData = {};
+  isSubmited = false;
 
   submitForm(){
-    console.log('Submited!', this.form);    
+    this.isSubmited = true;
+    //console.log('Submited!', this.form);
+    this.formData = this.form.value;
+    this.form.reset();    
   }
 
   clickRandEmail(){
