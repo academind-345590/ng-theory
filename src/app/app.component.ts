@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CarsService } from './cars.service';
 
 export interface Cars {
+  filter: any;
   push(newCar: Cars);
   id: number,
   name: string,
@@ -60,6 +61,14 @@ export class AppComponent {
       .changeColor(car , this.getRandColor())
       .subscribe((date) => {
         // console.log(date);
+      })
+  }
+
+  deleteCar(car: Cars){
+    this.carsService
+      .deleteCar(car)
+      .subscribe((date) => {
+        this.cars = this.cars.filter(c => c.id !== car.id);
       })
   }
 }

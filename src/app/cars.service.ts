@@ -21,6 +21,10 @@ export class CarsService {
 
   changeColor(car: any, color: string){
     car.color = color;
-    return this.http.put(`http://localhost:3000/cars/${car.id}`,car)
+    return this.http.put(`http://localhost:3000/cars/${car.id}`,car);
+  }
+
+  deleteCar(car: any){
+    return this.http.delete(`http://localhost:3000/cars/${car.id}`);
   }
 }

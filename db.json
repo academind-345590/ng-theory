@@ -9,16 +9,6 @@
       "color": "grey",
       "name": "Moskvich",
       "id": 2
-    },
-    {
-      "name": "Niva",
-      "color": "green",
-      "id": 3
-    },
-    {
-      "name": "Bentli",
-      "id": 4,
-      "color": "aqua"
     }
   ]
 }
