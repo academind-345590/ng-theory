@@ -4,6 +4,11 @@
       "id": 111,
       "name": "Ford",
       "color": "white"      
+    },
+    {
+      "id": 222,
+      "name": "Moskvich",
+      "color": "aqua"      
     }
   ]
 }
