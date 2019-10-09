@@ -16,6 +16,18 @@ export class AppComponent {
   cars: Cars;
   carName: string;
   carColor: string;
+  colors=[
+    'red',
+    "blue",
+    "aqua",
+    "green",
+    "grey",
+    "orange",
+    "black",
+    "pink",
+    "yellow",
+    "olive"
+  ]
 
   constructor(private carsService: CarsService){};
 
@@ -36,5 +48,18 @@ export class AppComponent {
       })
     this.carName = '';
     this.carColor = '';
+  }
+
+  getRandColor(){
+    const num = Math.round(Math.random()*(this.colors.length - 1));
+    return this.colors[num];
+  }
+
+  setNewColor(car: Cars){
+    this.carsService
+      .changeColor(car , this.getRandColor())
+      .subscribe((date) => {
+        // console.log(date);
+      })
   }
 }
