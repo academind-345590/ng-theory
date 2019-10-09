@@ -1,5 +1,9 @@
 <div class="col-lg-8 col-lg-offset-2">
-  <button class="btn btn-primary"(click)="loadCars()">Загрузить машины</button>
+  <input type="text" class="form-control" [(ngModel)]="carName"><br>
+  <input type="text" class="form-control" [(ngModel)]="carColor"><br>
+    <button class="btn btn-success" (click)="addCar()">Добавить машину в список</button>
+  <hr>
+  <button class="btn btn-primary"(click)="loadCars()">Загрузить список машин</button>
   <hr>
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let car of cars">

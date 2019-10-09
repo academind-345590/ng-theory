@@ -10,4 +10,12 @@ export class CarsService {
   getCars(){
     return this.http.get<Cars>('http://localhost:3000/cars');
   }
+
+  addCar(carName: string, carColor: string){
+    const date = {
+      name: carName,
+      color: carColor
+    }
+    return this.http.post('http://localhost:3000/cars',date);
+  }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CarsService } from './cars.service';
 
 export interface Cars {
+  push(newCar: Cars);
   id: number,
   name: string,
   color: string
@@ -13,6 +14,8 @@ export interface Cars {
 })
 export class AppComponent {
   cars: Cars;
+  carName: string;
+  carColor: string;
 
   constructor(private carsService: CarsService){};
 
@@ -22,5 +25,16 @@ export class AppComponent {
       .subscribe((cars: Cars)=>{
         this.cars=cars;
       })
+  }
+
+  addCar(){
+    this.carsService
+      .addCar(this.carName, this.carColor)
+      .subscribe((newCar: Cars)=>{
+        if(this.cars)
+        this.cars.push(newCar);
+      })
+    this.carName = '';
+    this.carColor = '';
   }
 }
