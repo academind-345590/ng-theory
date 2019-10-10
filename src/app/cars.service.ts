@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Cars } from './app.component';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class CarsService {
@@ -11,7 +13,10 @@ export class CarsService {
     const header = new HttpHeaders({
       'Content-Type':  'application/json; charset=utf8'
     })
-    return this.http.get<Cars>('http://localhost:3000/cars', {headers: header});
+    return this.http.get<Cars>('http://localhost:3000/cars', {headers: header})
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 
   addCar(carName: string, carColor: string){
@@ -30,4 +35,8 @@ export class CarsService {
   deleteCar(car: any){
     return this.http.delete(`http://localhost:3000/cars/${car.id}`);
   }
+
+  private handleError(error: HttpErrorResponse) {
+   return throwError( 'Сeрвер капут!');
+  };
 }

@@ -37,7 +37,11 @@ export class AppComponent {
       .getCars()
       .subscribe((cars: Cars)=>{
         this.cars=cars;
-      })
+      },
+      (error)=>{
+        alert(error);
+      }
+      )
   }
 
   addCar(){
