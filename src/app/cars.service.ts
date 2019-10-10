@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Cars } from './app.component';
 
 @Injectable()
@@ -8,7 +8,10 @@ export class CarsService {
   constructor(private http: HttpClient) {}
 
   getCars(){
-    return this.http.get<Cars>('http://localhost:3000/cars');
+    const header = new HttpHeaders({
+      'Content-Type':  'application/json; charset=utf8'
+    })
+    return this.http.get<Cars>('http://localhost:3000/cars', {headers: header});
   }
 
   addCar(carName: string, carColor: string){
