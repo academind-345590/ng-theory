@@ -10,6 +10,9 @@ import { CarsPageComponent } from './cars-page/cars-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CarPageComponent } from './car-page/car-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
+import { SecretPageComponent } from './secret-page/secret-page.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CarsPageComponent,
     CarPageComponent,
     NotFoundComponent,
+    SecretPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FormsModule,
     AppRoutingModule    
   ],
-  providers: [CarsService],
+  providers: [CarsService, AuthService,  AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
