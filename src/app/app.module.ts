@@ -5,12 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { CarsPageComponent } from './cars-page/cars-page.component';
-import { CarPageComponent } from './cars-page/car-page/car-page.component';
 import { ColorDirective } from './shared/color.directive';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
-import { CarsService } from './cars.service';
+import { CarsModule } from './cars-page/cars.module';
 
 
 
@@ -19,8 +17,6 @@ import { CarsService } from './cars.service';
   declarations: [
     AppComponent,
     HomePageComponent,
-    CarsPageComponent,
-    CarPageComponent,
     ColorDirective,
     HeaderComponent
   ],
@@ -28,9 +24,10 @@ import { CarsService } from './cars.service';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule    
+    AppRoutingModule,
+    CarsModule    
   ],
-  providers: [CarsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
