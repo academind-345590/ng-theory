@@ -5,6 +5,7 @@ import { CarsPageComponent } from './cars-page.component';
 import { CarPageComponent } from './car-page/car-page.component';
 import { CarsService } from '../cars.service';
 import { CarRoutingModule } from './cars-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CarRoutingModule } from './cars-routing.module';
   ],
   imports: [
     CommonModule,
-    CarRoutingModule
+    CarRoutingModule,
+    SharedModule
   ],
   providers: [CarsService]
 })

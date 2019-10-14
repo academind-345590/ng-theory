@@ -7,6 +7,6 @@ export class ColorDirective implements OnInit {
   @HostBinding('style.color') color = 'black';
 
   ngOnInit() {
-    this.color = 'blue';
+    this.color = 'olive';
   }
 }
