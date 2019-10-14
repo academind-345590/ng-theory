@@ -9,7 +9,6 @@
         <a 
           [routerLink]="['/cars', car.id, car.name ]"
           [queryParams]="{year: car.year, color: car.color}"
-          [fragment]="'pic'"
         >{{car.name}}</a>
       </li>
     </ul>

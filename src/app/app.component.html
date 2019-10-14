@@ -1,21 +1,8 @@
 <div class="container">
-  <nav style="margin-bottom: 20px;" class="navbar fixed-top navbar-light" style="background-color: rgb(214, 206, 221);">
-    <ul class="nav nav-tabs">
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-        <a  class="nav-link" routerLink="/">Главная</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a  class="nav-link" [routerLink]="'/cars'">Машины</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a  class="nav-link" [routerLink]="'/secret'">Секрет</a>
-      </li>
-    </ul>
-  </nav>
-  <br>
+  <app-header></app-header>
   <div class="row">
-    <div class="col-ms-10 col-ms-offset-1">
-        <router-outlet></router-outlet>
+    <div class="col-xs-10 col-xs-offset-1">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
