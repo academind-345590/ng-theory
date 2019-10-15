@@ -2,6 +2,8 @@
 <hr>
 <div 
   @divTrigger
+  (@divTrigger.start)="onAnimationStart($event)"
+  (@divTrigger.done)="onAnimationDone($event)"
   class="alert alert-info"
   *ngIf="isVisible"
 >
