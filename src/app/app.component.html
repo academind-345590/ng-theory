@@ -1,16 +1,3 @@
-<button class="btn btn-info" (click)="isVisible = !isVisible">Нажми меня</button>
-<hr>
-<div 
-  @divTrigger
-  (@divTrigger.start)="onAnimationStart($event)"
-  (@divTrigger.done)="onAnimationDone($event)"
-  class="alert alert-info"
-  *ngIf="isVisible"
->
-  Это анимированное сообщение !
-</div>
-<!-- <hr>
-<div 
-  [@changeWidthTrigger]="isVisible ? 'a' : 'b'"
-  style="height: 50px; width: 200px; background-color: red"
-></div> -->
+<h1>
+  {{title}}
+</h1>
