@@ -1,6 +1,7 @@
 <button class="btn btn-info" (click)="isVisible = !isVisible">Нажми меня</button>
 <hr>
 <div 
+  [@divTrigger]="'show'"
   class="alert alert-info"
   *ngIf="isVisible"
 >
