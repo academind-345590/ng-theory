@@ -30,11 +30,37 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       transition('active => end',[
         animate(400)
       ])
+    ]),
+    trigger('multi',[
+      state('start', style({
+        width: '150px',
+        height: '150px',
+        border: '4px solid black'
+      })),
+      state('end', style({
+        width: '170px',
+        height: '170px',
+        backgroundColor: 'green'
+      })),
+      transition('start <=> end', [
+        style({
+          backgroundColor: 'red'
+        }),
+        animate(1500, style({
+          backgroundColor: 'yellow'
+        })),
+        animate(1000, style({
+          width: '200px',
+          height: '200px'
+        })),
+        animate(1000)
+      ])
     ])
   ]
 })
 export class AppComponent {
  clickedDivState ='start';
+ multiState = 'start';
 
  changeDivState(){
    this.clickedDivState = 'end';
