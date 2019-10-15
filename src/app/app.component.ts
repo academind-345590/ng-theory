@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { divTrigger } from './app.animations';
+import { divTrigger, changeWidthTrigger } from './app.animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   animations: [
-    divTrigger
+    divTrigger,
+    changeWidthTrigger
   ]
 })
 export class AppComponent {
